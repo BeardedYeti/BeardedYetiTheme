@@ -1,17 +1,30 @@
-var gulp = require('gulp'),
-	plumber = require('gulp-plumber'),
-	watch = require('gulp-watch'),
-	gutil = require('gulp-util')
-	livereload = require('gulp-livereload'),
-	minifycss = require('gulp-minify-css'),
-	jshint = require('gulp-jshint'),
-	stylish = require('jshint-stylish'),
-	uglify = require('gulp-uglify'),
-	rename = require('gulp-rename'),
-	notify = require('gulp-notify'),
-	include = require('gulp-include'),
-	sass = require('gulp-sass');
+'use strict';
 
+var gulp = require('gulp'),
+	browserify = require('browserify'), // Bundles JS files
+	sass = require('gulp-sass'), // Compiles sass/scss files to css
+	babelify = require('babelify'), // Used to convert ES6 & JSX to ES5
+	watch = require('gulp-watch'),
+	plumber = require('gulp-plumber'), // Prevents piping streams from breaking
+	gutil = require('gulp-util'), // Provides gulp utilities, including logging and beep
+	minifycss = require('gulp-clean-css'), // Minifies CSS
+	jshint = require('gulp-jshint'), // Lints JS
+	stylish = require('jshint-stylish'), // Stylizes jshint linting
+	uglify = require('gulp-uglify'), // Minifies JS
+	autoprefixer = require('gulp-autoprefixer'), // Autoprefixes for supported browsers
+	notify = require('gulp-notify'), // Provides notification to both the console
+	sourcemaps = require('sourcemaps'), // Provide external sourcemap files
+	
+//Path Sources
+
+	input = {
+      'sass': 'sass/**/*.scss',
+      'es6': 'es6/**/*.js'
+    },
+    output = {
+      'css': 'style.css',
+      'js': 'js'
+    };
 
 gulp.task('default', function() {
 	console.log('Gulp is active! Welcome back Sir!')
@@ -23,27 +36,63 @@ var onError = function(err) {
 	this.emit('end');
 };
 
-gulp.task('jshint', function() {
-      return gulp.src('./js/**/*.js')
-        .pipe(jshint())
-        .pipe(jshint.reporter('jshint-stylish'));
-});
+//CSS
+	//From Folder
+	//Plumber
+	//sourcemaps
+	//compile scss to css
+	//autoprefix
+	//minify
+	//sourcemaps
+	//To Folder
+	//Notify
 
-gulp.task('scss', function() {
-  return gulp.src('./scss/style.scss')
-    .pipe(plumber({ errorHandler: onError }))
-    .pipe(sass())
-    .pipe(gulp.dest('.'))
-    .pipe(minifycss() )
-    .pipe(rename( { suffix: '.min' } ) )
-    .pipe(gulp.dest('.'))
-    .pipe(livereload());
-} );
+	gulp.task('build-css', function() {
+    	return gulp.src(input.sass)
+    		.pipe(plumber({ errorHandler: onError }))
+    		.pipe(sourcemaps.init())
+      		.pipe(sass({
+        		css: 'style.css',
+        		sass: 'sass/style.scss'
+        	}))
+      		.pipe(autoprefixer())
+      		.pipe(minifycss())
+    		.pipe(sourcemaps.write())
+    		.pipe(gulp.dest(output.stylesheets))
+    		.pipe(notify('SASS/SCSS compiled into CSS, autoprefixed, and minified'));
+    });
 
-gulp.task('watch', function() {
-	livereload.listen();
-	gulp.watch('./sass/**/*.scss', ['scss']);
-	gulp.watch('./**/*.php').on('change', function(file) {
-		livereload.changed(file);
+//JS
+	//Browserify From Folder
+	//Plumber
+	//Babelify
+	//Lint +stylish
+	//Bundle
+	//source bundle.js
+	//Vinyl Buffer
+	//uglify
+	//To Folder
+	//Notify
+
+	gulp.task('build-js', function() {
+    	return browserify({entries: input.es6, debug: true})
+	      	.pipe(plumber({ errorHandler: onError }))
+	      	.transform(babelify)
+	      	.pipe(jshint())
+	      	.pipe(jshint.reporter(stylish))
+	      	.bundle()
+	      	.pipe(source('bundle.js'))
+	      	.pipe(buffer())
+	      	.pipe(uglify())
+	        .pipe(gulp.dest(output.js));
+	        .pipe(notify('ES6 compiled to JS, Linted, Bundled, and Minified'));
+    });
+
+//Watch and Build
+	//Watch SCSS Folder If Changes Run CSS
+	//Watch JS Folder If Changes Run JS
+
+	gulp.task('watch', function() {
+		gulp.watch(input.es6, ['build-js']);
+		gulp.watch(input.sass, ['build-css']);
 	});
-});

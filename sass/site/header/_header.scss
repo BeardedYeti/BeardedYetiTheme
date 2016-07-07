@@ -1,0 +1,49 @@
+.site-header {
+	background-color: $color__background-header;
+
+}
+.site-branding {
+	text-align: center;
+}
+.site-title {
+	margin: 1.7em 1em 0;
+	font-size: 2.4em;
+	font-family: $font__heading;
+	font-weight: bold;
+	line-height: 1.3em;
+	color: $color__text-header;
+	transform-text: uppercase;
+	word-break: break-word;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+.site-title a:hover,
+.site-title a:focus,
+.site-title a:visited {
+	text-decoration: none;
+	color: inherit;
+}
+
+.site-title::after {
+	display: block;
+	content: "";
+	margin: 0.25em auto 0;
+	width: 4em;
+	border-bottom: dotted 3px $color__text-header;
+	opacity: 0.5;
+}
+
+@media screen and (max-width: 30em) {
+	.site-title {
+		font-size: 2em;
+	}
+}
+
+.site-description {
+	margin: 2em 2em 3em;
+	font-size: 110%;
+	color: $color__text-header;
+	font-family: $font__title;
+}

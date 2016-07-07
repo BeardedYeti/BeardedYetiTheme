@@ -1,10 +1,10 @@
 /*!
 Theme Name: beardedyeti
-Theme URI: http://underscores.me/
+Theme URI: http://www.thebeardedyeti.net
 Author: Colin Smith
 Author URI: http://www.thecolinsmith.net
 Description: gaming review
-Version: 0.0.5
+Version: 0.0.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: beardedyeti
@@ -34,7 +34,9 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Alignments
 # Clearings
 # Widgets
+# Header
 # Content
+	## Global
     ## Posts and pages
 	## Asides
 	## Comments
@@ -90,6 +92,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Widgets
 --------------------------------------------------------------*/
 @import "site/secondary/widgets";
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+@import "site/header/header";
 
 /*--------------------------------------------------------------
 # Content

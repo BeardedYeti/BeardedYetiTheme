@@ -22,6 +22,7 @@ var gulp = require('gulp'),
 	input = {
       'sass': 'sass/**/*.scss',
       'styleSass': 'sass/style.scss',
+      'ecmascript': 'es6/**/*.js',
       'javascript': 'es6/app.js'
     },
     output = {
@@ -84,7 +85,7 @@ var onError = function(err) {
 	  }));
 	  magic.bundle()
 	  	.pipe(plumber({ errorHandler: onError }))
-	    .pipe(source('bundle.js'))
+	    .pipe(source('app.js'))
 	    .pipe(buffer())
 	    .pipe(sourcemaps.init({loadMaps: true}))
 	    	.pipe(jshint())
@@ -101,7 +102,7 @@ var onError = function(err) {
 	//Watch JS Folder If Changes Run JS
 
 	gulp.task('watch', function() {
-		gulp.watch(input.javascript, ['build-js'])
+		gulp.watch(input.ecmascript, ['build-js'])
 		.on('change', function(event) {
 			console.log('ES6 File ' + event.path + ' was ' + event.type + ', running tasks sir!')
 		});

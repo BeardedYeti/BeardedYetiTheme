@@ -116,6 +116,12 @@ add_action( 'widgets_init', 'beardedyeti_widgets_init' );
 function beardedyeti_scripts() {
 	wp_enqueue_style( 'beardedyeti-style', get_stylesheet_uri() );
 
+	// Add google fonts
+	//wp_enqueue_style( 'beardedyeti-google-fonts', 'https://fonts.googleapis.com/css?family=Space+Mono:400,400italic,700,700italic|Droid+Sans:700|Nova+Round' );
+	
+	// Add local fonts
+	wp_enqueue_style( 'beardedyeti-local-fonts', get_template_directory_uri() . '/lib/css/fonts/custom-fonts.css' );
+
 	wp_enqueue_script( 'beardedyeti-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'beardedyeti-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );

@@ -22,8 +22,8 @@
  */
 function beardedyeti_custom_header_setup() {
 	add_theme_support( 'custom-logo', array(
-		'width' => 96,
-		'height' => 96,
+		'width' => 500,
+		'height' => 500,
 		'flex-width' => false,
 		'flex-height' => false,
 	) );

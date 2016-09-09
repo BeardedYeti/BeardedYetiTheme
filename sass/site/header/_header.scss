@@ -15,13 +15,12 @@
 .site-logo a {
 	position: absolute;
 	z-index: 10;
-	top: 1em;
-	left: 1em;
+	top: 14em;
+	left: 2em;
 	display: block;
-	width: 2em;
-	height: 2em;
-	background: black;
-	border: 2px solid white;
+	width: 4em;
+	height: 4em;
+	background: transparent;
 	color: white;
 	text-decoration: none;
 }
@@ -42,7 +41,7 @@
 
 .site-logo a:hover,
 .site-logo a:focus {
-	outline: 2px solid white;
+	transform: scale(1.25);
 }
 
 .site-branding { 

@@ -21,6 +21,13 @@
  * @uses beardedyeti_header_style()
  */
 function beardedyeti_custom_header_setup() {
+	add_theme_support( 'custom-logo', array(
+		'width' => 96,
+		'height' => 96,
+		'flex-width' => false,
+		'flex-height' => false,
+	) );
+
 	add_theme_support( 'custom-header', apply_filters( 'beardedyeti_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => 'f2f2f2',

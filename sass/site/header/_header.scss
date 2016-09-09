@@ -26,6 +26,20 @@
 	text-decoration: none;
 }
 
+.site-firstletter {
+	font-family: $font__heading;
+	font-size: 1.5em;
+	font-weight: 700;
+	text-align: center;
+	line-height: 1.3em;
+}
+
+.site-logo a:hover .site-firstletter,
+.site-logo a:focus .site-firstletter {
+	background: white;
+	color: black;
+}
+
 .site-logo a:hover,
 .site-logo a:focus {
 	outline: 2px solid white;
@@ -34,6 +48,7 @@
 .site-branding { 
 	text-align: center;
 }
+
 .site-title {
 	margin: 1.7em 1em 0;
 	padding-top: 1em;
@@ -45,10 +60,12 @@
 	transform-text: uppercase;
 	word-break: break-word;
 }
+
 a {
 	text-decoration: none;
 	color: inherit;
 }
+
 .site-title a:hover,
 .site-title a:focus,
 .site-title a:visited {

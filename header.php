@@ -32,10 +32,12 @@
 
 		<?php // Display site icon or first letter as log ?>
 		<div class="site-logo">
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"
-			rel="home">
+			<?php $site_title = get_bloginfo( 'name' ); ?>
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 				<div class="screen-reader-text">Go to the home page of <?php bloginfo( 'name' ); ?></div>
-				Site logo goes here.
+				<div class="site-firstletter" aria-hidden="true">
+					<?php echo substr($site_title, 0, 1); ?>				
+				</div>
 			</a>
 		</div>	
 

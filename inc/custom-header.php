@@ -31,9 +31,10 @@ function beardedyeti_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'beardedyeti_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => 'f2f2f2',
-		'width'                  => 1000,
-		'height'                 => 300,
+		'width'                  => 1600,
+		'height'                 => 400,
 		'flex-height'            => true,
+		'flex-width'			 => true,
 		'wp-head-callback'       => 'beardedyeti_header_style',
 	) ) );
 }

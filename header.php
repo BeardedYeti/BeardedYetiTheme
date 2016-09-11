@@ -29,7 +29,8 @@
 <?php } else { ?>
 	<header id="masthead" class="site-header" role="banner">
 <?php } ?>
-
+		
+		<!--Site Logo-->
 		<?php // Display site icon or first letter as log ?>
 		<div class="site-logo">
 			<?php $site_title = get_bloginfo( 'name' ); ?>
@@ -47,7 +48,8 @@
 			</a>
 		</div>	
 
-		<div class="site-branding<?php if ( is_singular() ) { echo ' screen-reader-text'; } ?>">
+		<!-- Site Branding -->
+		<div class="site-branding">
 			<?php
 			if ( is_front_page() && is_home() ) : ?>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
@@ -62,10 +64,11 @@
 			<?php
 			endif; ?>
 		</div><!-- .site-branding -->
-
+		
+		<!-- Site Navigation -->
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'beardedyeti' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class'=> 'nav-menu', ) ); ?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 

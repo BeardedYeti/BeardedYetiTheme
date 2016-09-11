@@ -119,6 +119,9 @@ function beardedyeti_scripts() {
 	// Add google fonts
 	//wp_enqueue_style( 'beardedyeti-google-fonts', 'https://fonts.googleapis.com/css?family=Space+Mono:400,400italic,700,700italic|Droid+Sans:700|Nova+Round' );
 	
+	// Font Awesome icons
+	wp_enqueue_style( 'beardedyeti-fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css' );
+	
 	// Add local fonts
 	wp_enqueue_style( 'beardedyeti-local-fonts', get_template_directory_uri() . '/lib/css/fonts/custom-fonts.css' );
 

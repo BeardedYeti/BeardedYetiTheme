@@ -10,13 +10,13 @@
 }
 
 .site-logo {
-	position: relative;
+	//position: relative;
 }
 
 .site-logo a {
 	position: absolute;
 	z-index: 10;
-	top: 4.5em;
+	top: 17.5em;
 	left: 2em;
 	display: block;
 	width: 3em;
@@ -85,9 +85,18 @@ a {
 	opacity: 0.5;
 }
 
-@media screen and (max-width: 30em) {
+@media screen and (max-width: 50em) {
 	.site-title {
 		font-size: 2em;
+		padding-top: 2em;
+		padding-bottom: 0;
+		margin-bottom: 0;
+	}
+}
+
+@media screen and (max-width: 25em) {
+	.site-title {
+		font-size: 1.50em;
 	}
 }
 

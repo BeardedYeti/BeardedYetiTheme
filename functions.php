@@ -141,6 +141,14 @@ function beardedyeti_scripts() {
 add_action( 'wp_enqueue_scripts', 'beardedyeti_scripts' );
 
 /**
+ * Search Bar
+ */
+add_filter('wp_nav_menu_items','add_search_box_to_menu', 10, 2);
+function add_search_box_to_menu( $items, $args ) {
+    return $items . '<li class="menu-header-search">' . get_search_form(false) . '</li>';
+}
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';

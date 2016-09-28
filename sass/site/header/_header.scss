@@ -11,6 +11,7 @@
 
 .site-logo {
 	//position: relative;
+
 }
 
 .site-logo a {
@@ -25,6 +26,12 @@
 	color: white;
 	text-decoration: none;
 	outline: 0;
+	&:hover,
+	&:focus,
+	&:active {
+		transform: scale(1.25);
+		outline: 0;
+	}
 }
 
 .site-firstletter {
@@ -41,13 +48,6 @@
 	color: black;
 }
 
-.site-logo a:hover,
-.site-logo a:focus {
-	transform: scale(1.25);
-}
-
-
-
 .site-branding { 
 	text-align: center;
 }
@@ -62,6 +62,7 @@
 	color: $color__text-header;
 	transform-text: uppercase;
 	word-break: break-word;
+	text-decoration: none;
 }
 
 a {

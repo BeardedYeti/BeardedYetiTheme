@@ -5,14 +5,16 @@
 	height: 3.5em;
 	font-family: $font__pre;
 	font-weight: 300;
-	font-size: 1em;
+	font-size: 100%;
 	background-color: $color__background-evergreen;
 	text-transform: uppercase;
 	margin-top: 8.5em;
+
 	ul {
 		display: none;
-		list-style: none;
+		//list-style: none;
 		margin-left: 0;
+		list-style: none;
 	}
 
 	li {
@@ -83,12 +85,6 @@
 			margin-top: 2em;
 		}
 	}
-
-	@media screen and (max-width: 25em) {
-		.main-navigation {
-			margin-top: 10.5em;
-		}
-	}
 }
 .no-js .main-navigation ul ul {
 	display: block;
@@ -109,13 +105,13 @@
 	color: #fff;
 	text-transform: lowercase; /* Stop screen readers from reading the text as capital letters */
 	text-decoration: none;
-	outline: none;
+	outline: 0;
 	border-radius: 5px;
 }
 
 .dropdown-toggle:after {
 	content: "\f078";
-	font-size: 14px;
+	font-size: 12px;
 	line-height: 27px;
 	position: relative;
 	top: 0;
@@ -154,7 +150,7 @@
 
 .menu-toggle:active {
 	text-decoration: none;
-	outline: none;
+	outline: 0;
 }
 
 .menu-toggle.hide {
@@ -171,16 +167,7 @@
 .menu-toggle:hover,
 .menu-toggle:focus {
 	text-decoration: none;
-	outline: none;
-}
-
-@media screen and (min-width: 50em) {
-	.menu-toggle {
-		display: none;
-	}
-	.main-navigation ul {
-		display: block;
-	}
+	outline: 0;
 }
 
 .site-main .comment-navigation,
@@ -254,10 +241,24 @@
 		padding: 0 3.5em;
 		background-color: $color__background-evergreen;
 	}
+	.menu-toggle {
+		display: none;
+	}
+	.main-navigation ul {
+		display: block;
+	}
 	
 	.nav-menu {
 		padding: .3em 0 0 0;
 		background-color: transparent;
+		float: right;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		li {
+			font-size: 12px;
+			background-color: $color__background-evergreen;
+		}
 	}
 	
 	.main-navigation ul,
@@ -296,7 +297,7 @@
 	.main-navigation a:hover,
 	.main-navigation a:focus {
 		background: transparent;
-		color: #fff;
+		color: $color__text-nav;
 		text-decoration: none;
 	}
 	
@@ -329,7 +330,7 @@
 	
 	/* Simplify the drop-down toggle */
 	.dropdown-toggle {
-		top: 11px;
+		top: 5px;
 		right: 12px;
 		border: none;
 	}
@@ -339,4 +340,21 @@
 		width: 27px;
 	}
 	
+}
+
+@media screen and (max-width: 50em) {	
+	.nav-menu > ul > li:first-child,
+	.nav-menu > li:first-child {
+		margin-top: 2em;
+	}
+}
+@media screen and (max-width: 25em) {
+	.main-navigation {
+		margin-top: 10.5em;
+	}
+}
+
+//Search Bar
+.menu-header-search {
+	background-color: #F2FB02;
 }

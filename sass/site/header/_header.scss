@@ -9,7 +9,6 @@
 	margin-bottom: 2em;
 }
 
-
 .site-logo a {
 	position: absolute;
 	z-index: 10;
@@ -59,6 +58,34 @@
 	transform-text: uppercase;
 	word-break: break-word;
 	text-decoration: none;
+}
+
+.menu-header-search input[type=submit] {
+    clip: auto !important;
+    right: .75em !important;
+    top: 1em !important;
+    display: block !important;
+    text-indent: -999px !important;
+    text-align: center !important;
+    height: 1em !important;
+    width: 1em !important;
+    padding: 1em !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    left: auto !important;
+    position: absolute;
+    border: none;
+}
+
+.menu-header-search input[type=search]::before {
+    left: auto;
+    right: 0.75em;
+    background-color: rgb(0, 165, 191);
+    top: 1em;
+    color: rgb(255, 255, 255);
+    line-height: 0.9;
+    padding: 0.5em !important;
+    border-radius: 100% !important;
 }
 
 a {

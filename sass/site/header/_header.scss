@@ -9,10 +9,6 @@
 	margin-bottom: 2em;
 }
 
-.site-logo {
-	//position: relative;
-
-}
 
 .site-logo a {
 	position: absolute;
@@ -99,11 +95,21 @@ a {
 	.site-title {
 		font-size: 1.50em;
 	}
+	.site-logo a {
+		top: 17.5em;
+	}
 }
 
 .site-description {
-	margin: 2em 2em 3em;
+	//margin: 2em 2em 3em;
 	font-size: 110%;
 	color: $color__text-header;
 	font-family: $font__title;
 }
+
+@media screen and (min-width: 50em) {
+	.site-logo a {
+		top: 17em;
+	}
+}
+

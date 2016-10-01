@@ -8,8 +8,8 @@
 	font-size: 100%;
 	background-color: $color__background-evergreen;
 	text-transform: uppercase;
-	margin-top: 8.5em;
-
+	//margin-top: 8.5em;
+	
 	ul {
 		display: none;
 		//list-style: none;
@@ -228,7 +228,6 @@
 
 /* Horizontal menu on wide screens */
 @media screen and (min-width: 50em) {
-	
 	/* Position the menu in the header */
 	.main-navigation,
 	.main-navigation.toggled {
@@ -236,7 +235,6 @@
 		height: 4em;
 		max-width: 100%;
 		margin: 0 auto;
-		margin-top: 7em;
 		margin-bottom: 2em;
 		padding: 0 3.5em;
 		background-color: $color__background-evergreen;
@@ -249,15 +247,15 @@
 	}
 	
 	.nav-menu {
-		padding: .3em 0 0 0;
 		background-color: transparent;
 		float: right;
 		display: flex;
 		flex-direction: row;
 		flex-wrap: nowrap;
+		width: 90%;
 		li {
-			font-size: 12px;
 			background-color: $color__background-evergreen;
+			font-size: 0.75em;
 		}
 	}
 	
@@ -347,10 +345,22 @@
 	.nav-menu > li:first-child {
 		margin-top: 2em;
 	}
+	.main-navigation {
+		margin-top: 5.65em;
+	}
 }
 @media screen and (max-width: 25em) {
 	.main-navigation {
-		margin-top: 10.5em;
+		margin-top: 7.65em;
+	}
+}
+
+@media screen and (max-width: 57em) {
+	li {
+		.page_item {
+			width: 50%;
+			font-size: 50%;
+		}
 	}
 }
 

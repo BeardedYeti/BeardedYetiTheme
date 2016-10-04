@@ -26,3 +26,23 @@
 	clear: both;
 	margin: 0 0 1.5em;
 }
+.entry-meta {
+	padding: 2em 0;
+	font-family: $font__main;
+	font-size: 95%;
+}
+
+.author-avatar {
+	height: 50px;
+	width: 50px;
+}
+
+@media screen and (min-width: 50em) {
+	.author-avatar {
+		height: 70px;
+		width: 70px;
+		float: left;
+		margin-right: 1.5em;
+		margin-bottom: 0;
+	}
+}

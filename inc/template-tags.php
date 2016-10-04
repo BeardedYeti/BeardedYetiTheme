@@ -37,7 +37,10 @@ function beardedyeti_posted_on() {
 	// Display the author avatar if the author has a Gravatar
 	$author_id = get_the_author_meta( 'ID' );
 	if ( beardedyeti_validate_gravatar( $author_id ) ) {
+		echo '<div class="meta-content has-avatar">';
 		echo '<div class="author-avatar">' . get_avatar( $author_id ) . '</div>';
+	} else {
+		echo '<div class="meta-content">';
 	}
 	
 	echo '<span class="byline">' . $byline . '</span> // <span class="posted_on"> ' . $posted_on . '</span>'; // WPCS: XSS OK.

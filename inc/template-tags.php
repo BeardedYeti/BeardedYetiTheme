@@ -42,7 +42,7 @@ function beardedyeti_posted_on() {
 	} else {
 		echo '<div class="meta-content">';
 	}
-	
+
 	echo '<span class="byline">' . $byline . '</span> // <span class="posted_on"> ' . $posted_on . '</span>'; // WPCS: XSS OK.
 
 	if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
@@ -51,6 +51,7 @@ function beardedyeti_posted_on() {
 		comments_popup_link( sprintf( wp_kses( __( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'beardedyeti' ), array( 'span' => array( 'class' => array() ) ) ), get_the_title() ) );
 		echo '</span>';
 	}
+	echo '</div><!-- .meta-content -->';
 }
 endif;
 

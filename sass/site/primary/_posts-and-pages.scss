@@ -29,7 +29,7 @@
 }
 .entry-meta {
 	padding: 2em 0;
-	font-family: $font__main;
+	font-family: $font__heading;
 	font-size: 95%;
 	font-style: italic;
 	text-align: center;
@@ -109,5 +109,109 @@
 .entry-footer a:hover,
 .entry-footer a:focus {
 	border-bottom: 2px solid #000;
+}
 
+.single .hentry,
+.page .hentry {
+	padding-bottom: 0;
+}
+
+.entry-title {
+	margin-top: 2em;
+	margin-bottom: 1em;
+	font-size: 2em;
+	line-height: 1.3em;
+	text-align: center;
+	color: #000;
+	word-wrap: break-word; 
+}
+
+@media screen and (min-width: 40em) {
+	.entry-title {
+		margin-top: 1.5em;
+		font-size: 2.8em;
+		line-height: 1.3em;
+	}
+}
+
+.entry-title a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.entry-title a:hover,
+.entry-title a:focus {
+	text-deocration: underline;
+}
+
+.site-content li {
+	line-height: 1.6em;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+}
+
+.site-content li > ul {
+	margin-bottom: -1em;
+}
+
+.site-content li:last-child {
+	margin-bottom: -1em;
+}
+
+.deck,
+.entry-content {
+	margin: 1.5em 0 0;
+}
+
+@media screen and (min-width: 50em) {
+	.deck,
+	.entry-content {
+		padding: 0 3em;
+	}
+}
+
+.entry-footer::before,
+.entry-footer::after {
+	display: block;
+	content: ""; 
+	width: 7em;
+	border-bottom: 1px solid $color__post-content;
+	margin: 2em auto;
+}
+
+.entry-footer::before {
+	width: 3.5em;
+}
+
+.entry-footer {
+	font-family: $font__heading;
+	font-size: 95%;
+	font-style: italic;
+	text-align: center;
+}
+
+@media screen and (min-width: 40em) {
+	.entry-footer {
+		padding: 0 1.5em;
+	}
+}
+
+.entry-footer span {
+	margin: 0.5em 0;
+}
+
+.entry-footer span::after {
+	content: "|";
+	padding: 0 1em;
+}
+
+.entry-footer span:last-of-type::after {
+	content: "";
+	padding: 0;
+}
+
+.entry-footer span a {
+	font-weight: 700;
+	text-decoration: none;
+	color: #000;
 }

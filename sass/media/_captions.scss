@@ -1,16 +1,61 @@
 .wp-caption {
-	margin-bottom: 1.5em;
+	font-family: $font__pre;
+	font-style: italic;
 	max-width: 100%;
+	
+	.aligncenter {
+		margin-top: 2em;
+		margin-bottom: 2em;
+	}
+
+	.alignright,
+	.alignleft {
+		margin-top: 0em;
+		margin-bottom: 1.5em;
+	}
+
+	em {
+		font-style: normal;
+	}
 
 	img[class*="wp-image-"] {
 		@include center-block;
 	}
 
 	.wp-caption-text {
-		margin: 0.8075em 0;
+		display: block;
+		position: relative;
+		margin: 1.5em 0 2em 2em;
+		padding: 0 1em .5em;
+		font-size: 90%;
+		color: $color__caption-text;
+		border-right: 1px solid $color__post-content;
+		border-bottom: 1px solid $color__post-content;
 	}
 }
 
 .wp-caption-text {
-	text-align: center;
+	::before {
+		position: absolute;
+		top: -3px;
+		left: -1.4em;
+		display: block;
+		font-family: "FontAwesome";
+		font-style: normal;
+		color: $color__caption-text2;
+		content: "\f148";
+		transform: rotate(90deg);
+	}
+}
+
+.aligncenter .wp-caption-text,
+.alignnone .wp-caption-text {
+	margin-left: 30%;
+	margin-bottom: 2em;
+}
+
+.alignright .wp-caption-text,
+.alignleft .wp-caption-text {
+	margin-top: 1em;
+	margin-bottom: 1em;
 }

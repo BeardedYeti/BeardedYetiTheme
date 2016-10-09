@@ -21,10 +21,12 @@ img.alignleft {
 }
 
 @media screen and (min-width: 50em) {
-	img.alignright {
+	img.alignright,
+	.wp-caption.alightright {
 		margin-right: -1.5em;
 	}
-	img.alignleft {
+	img.alignleft,
+	.wp-caption.alignleft {
 		margin-left: -1.5em;
 	}
 	.centered-image {
@@ -35,10 +37,12 @@ img.alignleft {
 }
 
 @media screen and (min-width: 74em) {
-	img.alignright {
+	img.alignright,
+	.wp-caption.alignright {
 		margin-right: -3em;
 	}
-	img.alignleft {
+	img.alignleft,
+	.wp-caption.alignleft {
 		margin-left: -3em;
 	}
 }
